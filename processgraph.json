@@ -1,0 +1,767 @@
+{
+  "nodePOJO": [
+    {
+      "name": "预处理(0)",
+      "id": 0,
+      "proId": 0,
+      "point": {
+        "x": 44,
+        "y": 174
+      },
+      "dimension": {
+        "width": 106,
+        "height": 31
+      },
+      "preNodes": [],
+      "postNodes": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "预处理(1)",
+      "id": 1,
+      "proId": 0,
+      "point": {
+        "x": 37,
+        "y": 308
+      },
+      "dimension": {
+        "width": 106,
+        "height": 31
+      },
+      "preNodes": [],
+      "postNodes": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "预处理(2)",
+      "id": 2,
+      "proId": 0,
+      "point": {
+        "x": 32,
+        "y": 473
+      },
+      "dimension": {
+        "width": 106,
+        "height": 31
+      },
+      "preNodes": [],
+      "postNodes": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "去污干燥(0)",
+      "id": 3,
+      "proId": 1,
+      "point": {
+        "x": 215,
+        "y": 245
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        0,
+        1,
+        2
+      ],
+      "postNodes": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "去污干燥(1)",
+      "id": 4,
+      "proId": 1,
+      "point": {
+        "x": 212,
+        "y": 402
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        0,
+        1,
+        2
+      ],
+      "postNodes": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "器械消毒(0)",
+      "id": 5,
+      "proId": 2,
+      "point": {
+        "x": 404,
+        "y": 166
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        3
+      ],
+      "postNodes": [
+        8
+      ]
+    },
+    {
+      "name": "器械消毒(1)",
+      "id": 6,
+      "proId": 2,
+      "point": {
+        "x": 404,
+        "y": 317
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        3,
+        4
+      ],
+      "postNodes": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "器械消毒(2)",
+      "id": 7,
+      "proId": 2,
+      "point": {
+        "x": 394,
+        "y": 467
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        4
+      ],
+      "postNodes": [
+        9
+      ]
+    },
+    {
+      "name": "打包灭菌(0)",
+      "id": 8,
+      "proId": 3,
+      "point": {
+        "x": 588,
+        "y": 238
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        5,
+        6
+      ],
+      "postNodes": [
+        10,
+        11
+      ]
+    },
+    {
+      "name": "打包灭菌(1)",
+      "id": 9,
+      "proId": 3,
+      "point": {
+        "x": 585,
+        "y": 414
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        6,
+        7
+      ],
+      "postNodes": [
+        10,
+        11
+      ]
+    },
+    {
+      "name": "器械包库存(0)",
+      "id": 10,
+      "proId": 4,
+      "point": {
+        "x": 772,
+        "y": 239
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        8,
+        9
+      ],
+      "postNodes": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "器械包库存(1)",
+      "id": 11,
+      "proId": 4,
+      "point": {
+        "x": 772,
+        "y": 413
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        8,
+        9
+      ],
+      "postNodes": [
+        14,
+        15
+      ]
+    },
+    {
+      "name": "器械包装车(0)",
+      "id": 12,
+      "proId": 5,
+      "point": {
+        "x": 967,
+        "y": 192
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        10
+      ],
+      "postNodes": [
+        16,
+        17
+      ]
+    },
+    {
+      "name": "器械包装车(1)",
+      "id": 13,
+      "proId": 5,
+      "point": {
+        "x": 967,
+        "y": 305
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        10
+      ],
+      "postNodes": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "器械包装车(2)",
+      "id": 14,
+      "proId": 5,
+      "point": {
+        "x": 969,
+        "y": 397
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        11
+      ],
+      "postNodes": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "器械包装车(3)",
+      "id": 15,
+      "proId": 5,
+      "point": {
+        "x": 970,
+        "y": 508
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        11
+      ],
+      "postNodes": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "器械包运输(0)",
+      "id": 16,
+      "proId": 6,
+      "point": {
+        "x": 1167,
+        "y": 191
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        12
+      ],
+      "postNodes": [
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "name": "器械包运输(1)",
+      "id": 17,
+      "proId": 6,
+      "point": {
+        "x": 1173,
+        "y": 306
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        12,
+        13
+      ],
+      "postNodes": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "name": "器械包运输(2)",
+      "id": 18,
+      "proId": 6,
+      "point": {
+        "x": 1173,
+        "y": 398
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        13,
+        14,
+        15
+      ],
+      "postNodes": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "name": "器械包运输(3)",
+      "id": 19,
+      "proId": 6,
+      "point": {
+        "x": 1173,
+        "y": 509
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        14,
+        15
+      ],
+      "postNodes": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "器械包申领(0)",
+      "id": 20,
+      "proId": 7,
+      "point": {
+        "x": 1358,
+        "y": 157
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        16
+      ],
+      "postNodes": [
+        25
+      ]
+    },
+    {
+      "name": "器械包申领(1)",
+      "id": 21,
+      "proId": 7,
+      "point": {
+        "x": 1358,
+        "y": 257
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        16,
+        17,
+        18
+      ],
+      "postNodes": [
+        26
+      ]
+    },
+    {
+      "name": "器械包申领(2)",
+      "id": 22,
+      "proId": 7,
+      "point": {
+        "x": 1358,
+        "y": 357
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "postNodes": [
+        27
+      ]
+    },
+    {
+      "name": "器械包申领(3)",
+      "id": 23,
+      "proId": 7,
+      "point": {
+        "x": 1358,
+        "y": 457
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        17,
+        18,
+        19
+      ],
+      "postNodes": [
+        28
+      ]
+    },
+    {
+      "name": "器械包申领(4)",
+      "id": 24,
+      "proId": 7,
+      "point": {
+        "x": 1358,
+        "y": 557
+      },
+      "dimension": {
+        "width": 140,
+        "height": 31
+      },
+      "preNodes": [
+        19
+      ],
+      "postNodes": [
+        29
+      ]
+    },
+    {
+      "name": "器械回收(0)",
+      "id": 25,
+      "proId": 8,
+      "point": {
+        "x": 1540,
+        "y": 156
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        20
+      ],
+      "postNodes": []
+    },
+    {
+      "name": "器械回收(1)",
+      "id": 26,
+      "proId": 8,
+      "point": {
+        "x": 1540,
+        "y": 256
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        21
+      ],
+      "postNodes": []
+    },
+    {
+      "name": "器械回收(2)",
+      "id": 27,
+      "proId": 8,
+      "point": {
+        "x": 1540,
+        "y": 356
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        22
+      ],
+      "postNodes": []
+    },
+    {
+      "name": "器械回收(3)",
+      "id": 28,
+      "proId": 8,
+      "point": {
+        "x": 1540,
+        "y": 456
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        23
+      ],
+      "postNodes": []
+    },
+    {
+      "name": "器械回收(4)",
+      "id": 29,
+      "proId": 8,
+      "point": {
+        "x": 1540,
+        "y": 556
+      },
+      "dimension": {
+        "width": 123,
+        "height": 31
+      },
+      "preNodes": [
+        24
+      ],
+      "postNodes": []
+    }
+  ],
+  "nodeProcessPOJO": [
+    {
+      "pName": "预处理",
+      "text": "[1]预处理",
+      "serial": 0,
+      "point": {
+        "x": 41,
+        "y": 50
+      },
+      "dimension": {
+        "width": 80,
+        "height": 21
+      },
+      "nodes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "pName": "去污干燥",
+      "text": "[2]去污干燥",
+      "serial": 1,
+      "point": {
+        "x": 214,
+        "y": 52
+      },
+      "dimension": {
+        "width": 97,
+        "height": 21
+      },
+      "nodes": [
+        3,
+        4
+      ]
+    },
+    {
+      "pName": "器械消毒",
+      "text": "[3]器械消毒",
+      "serial": 2,
+      "point": {
+        "x": 403,
+        "y": 53
+      },
+      "dimension": {
+        "width": 97,
+        "height": 21
+      },
+      "nodes": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pName": "打包灭菌",
+      "text": "[4]打包灭菌",
+      "serial": 3,
+      "point": {
+        "x": 588,
+        "y": 54
+      },
+      "dimension": {
+        "width": 97,
+        "height": 21
+      },
+      "nodes": [
+        8,
+        9
+      ]
+    },
+    {
+      "pName": "器械包库存",
+      "text": "[5]器械包库存",
+      "serial": 4,
+      "point": {
+        "x": 766,
+        "y": 54
+      },
+      "dimension": {
+        "width": 114,
+        "height": 21
+      },
+      "nodes": [
+        10,
+        11
+      ]
+    },
+    {
+      "pName": "器械包装车",
+      "text": "[6]器械包装车",
+      "serial": 5,
+      "point": {
+        "x": 966,
+        "y": 54
+      },
+      "dimension": {
+        "width": 114,
+        "height": 21
+      },
+      "nodes": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "pName": "器械包运输",
+      "text": "[7]器械包运输",
+      "serial": 6,
+      "point": {
+        "x": 1159,
+        "y": 57
+      },
+      "dimension": {
+        "width": 114,
+        "height": 21
+      },
+      "nodes": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "pName": "器械包申领",
+      "text": "[8]器械包申领",
+      "serial": 7,
+      "point": {
+        "x": 1358,
+        "y": 57
+      },
+      "dimension": {
+        "width": 114,
+        "height": 21
+      },
+      "nodes": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "pName": "器械回收",
+      "text": "[9]器械回收",
+      "serial": 8,
+      "point": {
+        "x": 1540,
+        "y": 56
+      },
+      "dimension": {
+        "width": 97,
+        "height": 21
+      },
+      "nodes": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    }
+  ]
+}
