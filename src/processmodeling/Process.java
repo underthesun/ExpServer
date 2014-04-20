@@ -5,6 +5,7 @@
 package processmodeling;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -15,21 +16,32 @@ public class Process {
     private int id;
     private String addr;
     private int port;
+    private long regTime;
     private long lastBeat;
     private boolean isOnline;
-    private HashSet<Process> preProcessSet;
-    private HashSet<Process> postProcessSet;
+    private Set<Process> preProcessSet;
+    private Set<Process> postProcessSet;
 
     public Process(int id) {
         this.id = id;
         this.addr = "";
         this.port = 6666;
+        this.regTime = -1;
         this.lastBeat = -1;
         this.isOnline = false;
         this.preProcessSet = new HashSet<Process>();
         this.postProcessSet = new HashSet<Process>();
     }
 
+    public long getRegTime() {
+        return regTime;
+    }
+
+    public void setRegTime(long regTime) {
+        this.regTime = regTime;
+    }
+
+    
     public void addPreProcess(Process p) {
         preProcessSet.add(p);
     }
@@ -90,19 +102,19 @@ public class Process {
         this.isOnline = isOnline;
     }
 
-    public HashSet<Process> getPreProcessSet() {
+    public Set<Process> getPreProcessSet() {
         return preProcessSet;
     }
 
-    public void setPreProcessSet(HashSet<Process> preProcessSet) {
+    public void setPreProcessSet(Set<Process> preProcessSet) {
         this.preProcessSet = preProcessSet;
     }
 
-    public HashSet<Process> getPostProcessSet() {
+    public Set<Process> getPostProcessSet() {
         return postProcessSet;
     }
 
-    public void setPostProcessSet(HashSet<Process> postProcessSet) {
+    public void setPostProcessSet(Set<Process> postProcessSet) {
         this.postProcessSet = postProcessSet;
     }
 

@@ -5,6 +5,7 @@
 package util.processgraph;
 
 import java.util.HashSet;
+import java.util.Set;
 import processmodeling.Process;
 
 /**
@@ -13,13 +14,14 @@ import processmodeling.Process;
  */
 public class ProcessSimUtil {
 
-    public static HashSet<ProcessSim> ProcessToSim(HashSet<Process> processes) {
-        HashSet<ProcessSim> processSims = new HashSet<ProcessSim>();
+    public static Set<ProcessSim> ProcessToSim(Set<Process> processes) {
+        Set<ProcessSim> processSims = new HashSet<ProcessSim>();
         for (Process p : processes) {
             ProcessSim processSim = new ProcessSim();
             processSim.setAddr(p.getAddr());
             processSim.setId(p.getId());
             processSim.setIsOnline(p.isIsOnline());
+            processSim.setRegTime(p.getRegTime());
             processSim.setLastBeat(p.getLastBeat());
             processSim.setPort(p.getPort());
             processSims.add(processSim);

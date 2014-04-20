@@ -6,14 +6,18 @@ package main;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import communication.CommunicationTool;
 import communication.Message;
 import integrityvalidating.IntegrityController;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 import processmodeling.GraphManager;
 import util.Configurator;
 import processmodeling.Process;
-import test.TestServer;
+import util.processgraph.ProcessSim;
+import util.processgraph.ProcessSimUtil;
 
 /**
  *
@@ -21,7 +25,6 @@ import test.TestServer;
  */
 public class MidServer {
 
-    public TestServer frame;
     private GraphManager graphManager;
     private CommunicationTool communicationTool;
     private Gson gson;
@@ -45,12 +48,18 @@ public class MidServer {
         String mType = m.getType();
         if (mType.equals(Message.REGISTER)) {
             graphManager.register(m.getId(), addr, port);
-            infoUI(m);
+//            sendMessageToUI(m);
         } else if (mType.equals(Message.HEARTBEAT)) {
             graphManager.heartbeat(m.getId(), addr, port);
-            infoUI(m);
+            sendMessageToUI(m);
         } else if (mType.equals(Message.INT_START)) {
             controller.startSim();
+        } else if (mType.equals(Message.PROCESS_ONLINE)) {
+            echoProcessOnline();
+        } else if (mType.equals(Message.KILL)) {
+            sendKillMessage();
+            System.out.println("kill");
+            System.exit(0);
         }
     }
 
@@ -62,8 +71,32 @@ public class MidServer {
         communicationTool.sendMessage(p.getAddr(), p.getPort(), data);
     }
 
-    public void infoUI(Message m) {
+    public void sendMessageToUI(Message m) {
         communicationTool.sendMessage(configuration.UI_ADDR, configuration.UI_PORT, gson.toJson(m, Message.class));
+    }
+
+    public void echoProcessOnline() {
+        Set<Process> processes = new HashSet<Process>();
+        for (Process p : graphManager.getGraph().getProcessSet()) {
+            if (p.isIsOnline()) {
+                processes.add(p);
+            }
+        }
+        Message message = new Message();
+        message.setType(Message.PROCESS_ONLINE);
+        message.setContent(gson.toJson(ProcessSimUtil.ProcessToSim(processes), new TypeToken<Set<ProcessSim>>() {
+        }.getType()));
+        sendMessageToUI(message);
+    }
+
+    public void sendKillMessage() {
+        Message m = new Message();
+        m.setType(Message.KILL);
+        for (Process p : graphManager.getGraph().getProcessSet()) {
+            if (p.isIsOnline()) {
+                sendMessage(p, gson.toJson(m, Message.class));
+            }
+        }
     }
 
     public GraphManager getGraphManager() {

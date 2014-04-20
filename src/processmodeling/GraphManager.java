@@ -44,14 +44,16 @@ public class GraphManager {
     public void register(int pid, String addr, int port) {
         Process p = graph.getProcess(pid);
         if (p != null) {
-            p.setLastBeat(System.currentTimeMillis());
+            long t = System.currentTimeMillis();
+            p.setRegTime(t);
+            p.setLastBeat(t);
             p.setAddr(addr);
             p.setPort(port);
             p.setIsOnline(true);
         }
 //        System.out.println("reg: " + p.getId() + " addr: " + p.getAddr() + " port: " + p.getPort());
         registerConfirm(p);
-        server.frame.register(pid);
+//        server.frame.register(pid);
     }
 
     public void heartbeat(int pid, String addr, int port) {
@@ -71,12 +73,12 @@ public class GraphManager {
         p.setIsOnline(false);
 
         System.out.println("process: " + p.getId() + " fucking timeout");
-        server.frame.unregister(p.getId());
+//        server.frame.unregister(p.getId());
     }
 
     public void registerConfirm(Process p) {
 
-        HashMap<String, HashSet<ProcessSim>> linkedProcess = new HashMap<String, HashSet<ProcessSim>>();
+        HashMap<String, Set<ProcessSim>> linkedProcess = new HashMap<String, Set<ProcessSim>>();
         linkedProcess.put(Message.PROCESS_PRE_KEY, ProcessSimUtil.ProcessToSim(p.getPreProcessSet()));
         linkedProcess.put(Message.PROCESS_POST_KEY, ProcessSimUtil.ProcessToSim(p.getPostProcessSet()));
         Message m = new Message();
@@ -88,7 +90,7 @@ public class GraphManager {
 
     public void heartbeatConfirm(Process p) {
 
-        HashMap<String, HashSet<ProcessSim>> linkedProcess = new HashMap<String, HashSet<ProcessSim>>();
+        HashMap<String, Set<ProcessSim>> linkedProcess = new HashMap<String, Set<ProcessSim>>();
         linkedProcess.put(Message.PROCESS_PRE_KEY, ProcessSimUtil.ProcessToSim(p.getPreProcessSet()));
         linkedProcess.put(Message.PROCESS_POST_KEY, ProcessSimUtil.ProcessToSim(p.getPostProcessSet()));
 
