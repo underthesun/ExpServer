@@ -18,6 +18,12 @@ import util.processgraph.ProcessSim;
 import util.processgraph.ProcessSimUtil;
 
 /**
+ * 过程图管理类。 主要对过程图的构建和维护进行管理，并提供过程图信息访问接口。
+ *
+ * @see ProcessGraph
+ * @see HeartbeatValidator
+ * @see MidServer
+ * @see Gson
  *
  * @author b1106
  */
@@ -29,6 +35,11 @@ public class GraphManager {
     private MidServer server;
     private Gson gson;
 
+    /**
+     * 构建过程图管理类实例
+     * @param server 服务器端类实例
+     * @param threshold 超时阈值
+     */
     public GraphManager(MidServer server, long threshold) {
         this.server = server;
         this.threshold = threshold;
@@ -41,6 +52,12 @@ public class GraphManager {
 
     }
 
+    /**
+     * 过程节点注册接口
+     * @param pid 过程节点标识
+     * @param addr 过程节点地址
+     * @param port 过程节点端口号
+     */
     public void register(int pid, String addr, int port) {
         Process p = graph.getProcess(pid);
         if (p != null) {
@@ -56,6 +73,12 @@ public class GraphManager {
 //        server.frame.register(pid);
     }
 
+    /**
+     * 过程节点心跳接口
+     * @param pid 过程节点标识
+     * @param addr 过程节点地址
+     * @param port 过程节点端口号 
+     */
     public void heartbeat(int pid, String addr, int port) {
         Process p = graph.getProcess(pid);
         if (p != null) {
@@ -69,6 +92,10 @@ public class GraphManager {
         }
     }
 
+    /**
+     * 过程超时处理接口
+     * @param p 过程节点
+     */
     public void processTimeout(Process p) {
         p.setIsOnline(false);
 
@@ -76,6 +103,11 @@ public class GraphManager {
 //        server.frame.unregister(p.getId());
     }
 
+    /**
+     * 过程注册回馈接口
+     * @param p 过程节点
+     * @see Message#REGISTER_ACK
+     */
     public void registerConfirm(Process p) {
 
         HashMap<String, Set<ProcessSim>> linkedProcess = new HashMap<String, Set<ProcessSim>>();
@@ -88,6 +120,11 @@ public class GraphManager {
         server.sendMessage(p, gson.toJson(m, Message.class));
     }
 
+    /**
+     * 过程心跳回馈接口
+     * @param p 过程节点
+     * @see Message#HEARTBEAT_ACK
+     */
     public void heartbeatConfirm(Process p) {
 
         HashMap<String, Set<ProcessSim>> linkedProcess = new HashMap<String, Set<ProcessSim>>();

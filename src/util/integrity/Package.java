@@ -7,19 +7,18 @@ package util.integrity;
 import java.util.ArrayList;
 
 /**
+ * 用以模拟数据完整性验证的物品包信息。 物品包继承至Item，新增了所包含物品列表items
  *
  * @author shuai
  */
-public class Package extends Item{
+public class Package extends Item {
 
     private ArrayList<Item> items;
 
     public Package(int id) {
         super(id);
     }
-        
-    
-    
+
 //    public static void main(String[] args) {
 //        ArrayList<Package> ps = new ArrayList<Package>();
 //        Package p1 = new Package(1);
@@ -49,7 +48,6 @@ public class Package extends Item{
 //        Package p3 = new Package(2);
 //        System.out.println(p3.equals(p2));
 //    }
-
     public ArrayList<Item> getItems() {
         return items;
     }

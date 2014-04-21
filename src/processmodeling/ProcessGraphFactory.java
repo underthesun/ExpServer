@@ -5,11 +5,8 @@
 package processmodeling;
 
 import com.google.gson.Gson;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -21,16 +18,17 @@ import util.processgraph.NodePOJO;
 import util.processgraph.ProcessPOJO;
 
 /**
- *
+ * 过程图构建工具类，从文件中获取过程图信息
+ * @see ProcessGraph
  * @author b1106
  */
 public class ProcessGraphFactory {
 
-    public static ProcessGraph createProcessGraph() {
-        ProcessGraph graph = new ProcessGraph();
-        return graph;
-    }
-
+    /**
+     * 过程图解析接口，从文件中解析过程图结构
+     * @param file 文件
+     * @return 解析得到的过程图
+     */
     public static ProcessGraph parseProcessGraph(File file) {
         ProcessGraph graph = new ProcessGraph();
         Set<Process> processSet = new HashSet<Process>();

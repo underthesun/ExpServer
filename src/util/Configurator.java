@@ -16,11 +16,19 @@ import java.util.logging.Logger;
 import main.Configuration;
 
 /**
+ * 配置信息获取类。 解析配置文件，获取节点配置信息。
  *
+ * @see Configuration
  * @author b1106
  */
 public class Configurator {
 
+    /**
+     * 配置文件解析接口
+     *
+     * @param file 文件
+     * @return 配置信息
+     */
     public static Configuration parseConfiguration(File file) {
         InputStreamReader inputStreamReader = null;
         Configuration configuration = null;
@@ -39,5 +47,4 @@ public class Configurator {
         }
         return configuration;
     }
-
 }

@@ -8,6 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 服务器端的过程节点类。
+ * 存储过程节点的标识，过程节点地址信息，过程节点端口号，过程节点注册时间，过程节点心跳时间，过程节点在线标识，
+ * 以及关联过程信息
  *
  * @author b1106
  */
@@ -22,6 +25,10 @@ public class Process {
     private Set<Process> preProcessSet;
     private Set<Process> postProcessSet;
 
+    /**
+     * 构建过程类实例
+     * @param id 过程标识
+     */
     public Process(int id) {
         this.id = id;
         this.addr = "";
@@ -41,7 +48,6 @@ public class Process {
         this.regTime = regTime;
     }
 
-    
     public void addPreProcess(Process p) {
         preProcessSet.add(p);
     }
@@ -125,6 +131,4 @@ public class Process {
     public void setPort(int port) {
         this.port = port;
     }
-
-    
 }

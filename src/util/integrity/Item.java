@@ -5,7 +5,8 @@
 package util.integrity;
 
 /**
- *
+ * 用以模拟数据完整性验证的物品信息。
+ * 物品包含了物品标识id，其所属包标识packageId
  * @author shuai
  */
 public class Item implements Cloneable {

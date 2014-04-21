@@ -9,11 +9,16 @@ import java.util.Set;
 import processmodeling.Process;
 
 /**
- *
+ * 过程Process转化为ProcessSim的工具类
  * @author b1106
  */
 public class ProcessSimUtil {
 
+    /**
+     * 过程Process转化为ProcessSim的转化接口
+     * @param processes Process集合
+     * @return ProcessSim集合
+     */
     public static Set<ProcessSim> ProcessToSim(Set<Process> processes) {
         Set<ProcessSim> processSims = new HashSet<ProcessSim>();
         for (Process p : processes) {

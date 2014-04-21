@@ -5,6 +5,7 @@
 package communication;
 
 /**
+ * 服务器端用到的消息类，字段包括消息类型type,消息发出端标识id，消息内容content. 各项静态字段定义了需要用到各种消息类型
  *
  * @author b1106
  */
@@ -19,13 +20,14 @@ public class Message {
     public static String PROCESS_POST_KEY = "post";
     //
     public static String ORDER = "order";
-    public static String DATA = "data";    
+    public static String DATA = "data";
     public static String INT_START = "intStart";
     public static String INT_REPORT = "intReport";
     public static String INT_ECHO = "intEcho";
     public static String PROCESS_ONLINE = "proOn";
-    
     public static String KILL = "kill";
+    public static String TASK = "task";
+    public static String TASK_RESULT = "taskResult";
     //
     private String type;
     private int id;

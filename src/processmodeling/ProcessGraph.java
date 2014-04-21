@@ -8,7 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
+ * 服务器端过程图类。
+ * 存储过程图中的三个过程集合，其实过程节点集合，终止过程节点集合，过程节点集合
+ * @see Process
  * @author b1106
  */
 public class ProcessGraph {
@@ -17,6 +19,9 @@ public class ProcessGraph {
     private Set<Process> terminationProcessSet;
     private Set<Process> processSet;
 
+    /**
+     * 构建过程图实例，初始化过程图
+     */
     public ProcessGraph() {
         originProcessSet = new HashSet<Process>();
         terminationProcessSet = new HashSet<Process>();

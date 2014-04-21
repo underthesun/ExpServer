@@ -7,7 +7,7 @@ package util.integrity;
 import java.util.ArrayList;
 
 /**
- *
+ * 用以模拟数据完整性验证的订单信息。 订单包含了订单标识orderId, 订单所包含的物品列表items, 订单所包含的物品包列表packages
  * @author b1106
  */
 public class Order {

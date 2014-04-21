@@ -8,7 +8,7 @@ package util.processgraph;
 import java.util.ArrayList;
 
 /**
- * 
+ * 中间过程Process对应的POJO类
  * @author shuai
  */
 public class ProcessPOJO {

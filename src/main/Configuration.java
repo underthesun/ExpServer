@@ -5,7 +5,7 @@
 package main;
 
 /**
- *
+ * 服务器端所需的配置类，用以启动时存储配置文件中获取到的配置信息
  * @author b1106
  */
 public class Configuration {
@@ -13,6 +13,8 @@ public class Configuration {
     public int HEARTBEAT_THRESHOLD = 3000;
     public int SERVER_PORT = 6666;
     public int UI_PORT = 6667;
+    public int PACK_NUM = 10;
+    public int ITEM_NUM = 100;
     public String UI_ADDR = "localhost";
 
     public int getHEARTBEAT_THRESHOLD() {
@@ -46,5 +48,23 @@ public class Configuration {
     public void setUI_ADDR(String UI_ADDR) {
         this.UI_ADDR = UI_ADDR;
     }
+
+    public int getPACK_NUM() {
+        return PACK_NUM;
+    }
+
+    public void setPACK_NUM(int PACK_NUM) {
+        this.PACK_NUM = PACK_NUM;
+    }
+
+    public int getITEM_NUM() {
+        return ITEM_NUM;
+    }
+
+    public void setITEM_NUM(int ITEM_NUM) {
+        this.ITEM_NUM = ITEM_NUM;
+    }
+    
+    
     
 }

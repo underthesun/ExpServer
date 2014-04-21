@@ -5,7 +5,7 @@
 package util.processgraph;
 
 /**
- *
+ * 过程类对应的序列化类
  * @author b1106
  */
 public class ProcessSim {
